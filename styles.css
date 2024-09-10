@@ -1,0 +1,55 @@
+:root {
+  /* ### Primary Colors */
+  --main-color-orange: hsl(26, 100%, 55%);
+  --main-color-pale-orange: hsl(25, 100%, 94%);
+  /* ### Neutral Colors */
+  /* - Very dark blue: hsl(220, 13%, 13%)
+- Dark grayish blue: hsl(219, 9%, 45%)
+- Grayish blue: hsl(220, 14%, 75%)
+- Light grayish blue: hsl(223, 64%, 98%)
+- White: hsl(0, 0%, 100%)
+- Black (with 75% opacity for lightbox background): hsl(0, 0%, 0%) */
+  /* dimensions */
+
+  /* fonts */
+
+  --paragraphs-font-size: 1rem;
+  --headings-font-size: 1.5rem;
+  --font-type: "Kumbh Sans", sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  /* - Family: [Kumbh Sans](https://fonts.google.com/specimen/Kumbh+Sans) */
+}
+
+html {
+  font-size: 100%;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+
+nav {
+  width: 80%;
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/* block */
+.shoe-image {
+  border-radius: 20px;
+}
+/* modifier */
+.shoe-image--active {
+  display: block;
+}
+.shoe-thumbnail {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 1rem;
+  border-radius: 20px;
+}
