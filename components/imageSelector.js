@@ -4,6 +4,7 @@ export function imageSelector() {
       id: 1,
       src: "images/image-product-1-thumbnail.jpg",
       alt: "shoe 1",
+      src: "images/image-product-1.jpg",
     },
     {
       id: 2,
@@ -24,14 +25,31 @@ export function imageSelector() {
 
   return `
   <div class='shoe-container'>
-        <img src="images/image-product-1.jpg" width="400px" height="auto" class='shoe-image'>
+        <img src="images/image-product-1.jpg" width="100%" height="auto" class='shoe-image'>
         <div class='shoe-thumbnails'>
-        ${images.map(
-          (image) => `
-            <img src="${image.src}" width="100px" height="auto" class='shoe__thumbnail shoe--active' alt="${image.alt}">
-        `
-        )}
+        ${images
+          .map(
+            (image) =>
+              `<img src="${image.src}" width="80px" height="auto" class='shoe__thumbnail shoe--active' alt="${image.alt}">`
+          )
+          .join("")}
         </div>
     </div>
     `;
+}
+
+export function handleThumbnailClick() {
+  const thumbnails = document.querySelectorAll(".shoe__thumbnail");
+
+  thumbnails.forEach((thumbnail) => {
+    thumbnail.addEventListener("click", () => {
+      console.log("thumbnail clicked");
+      const shoeImage = document.querySelector(".shoe-image");
+      shoeImage.src = thumbnail.src;
+      thumbnails.forEach((thumbnail) =>
+        thumbnail.classList.remove("shoe--active")
+      );
+      thumbnail.classList.add("shoe--active");
+    });
+  });
 }

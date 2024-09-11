@@ -1,4 +1,4 @@
-import { imageSelector } from "./imageSelector.js";
+import { imageSelector, handleThumbnailClick } from "./imageSelector.js";
 
 export function home() {
   const shoeImageSelector = imageSelector;

@@ -5,6 +5,7 @@ import { contact } from "./components/contact.js";
 import { men } from "./components/men.js";
 import { women } from "./components/women.js";
 import { unknown } from "./components/unknown.js";
+import { handleThumbnailClick } from "./components/imageSelector.js";
 
 const lookup = {
   "#home": home,
@@ -17,7 +18,6 @@ const lookup = {
 
 export function router() {
   let path = window.location.hash;
-  console.log(path, "path");
 
   const route = lookup[path] || unknown;
   const main = document.querySelector("main");
@@ -26,5 +26,9 @@ export function router() {
     main.innerHTML = route(); // Call the route function and set it as main.innerHTML
   } else {
     console.error("Main element not found!");
+  }
+
+  if (path === "#home") {
+    handleThumbnailClick();
   }
 }

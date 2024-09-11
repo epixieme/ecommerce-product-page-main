@@ -1,5 +1,5 @@
 import { router } from "./router.js";
-
+import { handleThumbnailClick } from "./components/imageSelector.js";
 console.log("app.js");
 // Initialize the router when the page loads
 window.addEventListener("DOMContentLoaded", router);
