@@ -23,11 +23,15 @@ export function imageSelector() {
   ];
 
   return `
+  <div class='shoe-container'>
         <img src="images/image-product-1.jpg" width="400px" height="auto" class='shoe-image'>
+        <div class='shoe-thumbnails'>
         ${images.map(
           (image) => `
-            <img src="${image.src}" width="100px" height="auto" class='shoe-thumbnail' alt="${image.alt}">
+            <img src="${image.src}" width="100px" height="auto" class='shoe__thumbnail shoe--active' alt="${image.alt}">
         `
         )}
+        </div>
+    </div>
     `;
 }

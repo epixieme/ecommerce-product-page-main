@@ -3,16 +3,17 @@
   --main-color-orange: hsl(26, 100%, 55%);
   --main-color-pale-orange: hsl(25, 100%, 94%);
   /* ### Neutral Colors */
-  /* - Very dark blue: hsl(220, 13%, 13%)
-- Dark grayish blue: hsl(219, 9%, 45%)
-- Grayish blue: hsl(220, 14%, 75%)
-- Light grayish blue: hsl(223, 64%, 98%)
-- White: hsl(0, 0%, 100%)
-- Black (with 75% opacity for lightbox background): hsl(0, 0%, 0%) */
+  --neutral-color-very-dark-blue: hsl(220, 13%, 13%);
+  --neutral-color-dark-grayish-blue: hsl(219, 9%, 45%);
+  --neutral-color-grayish-blue: hsl(220, 14%, 75%);
+  --neutral-color-light-grayish-blue: hsl(223, 64%, 98%);
+  --neutral-color-white: hsl(0, 0%, 100%);
+  /* (with 75% opacity for lightbox background): hsl(0, 0%, 0%) */
+  --neutral-color-black: hsla(0, 0%, 0%, 0.75);
+
   /* dimensions */
 
   /* fonts */
-
   --paragraphs-font-size: 1rem;
   --headings-font-size: 1.5rem;
   --font-type: "Kumbh Sans", sans-serif;
@@ -21,6 +22,15 @@
   /* - Family: [Kumbh Sans](https://fonts.google.com/specimen/Kumbh+Sans) */
 }
 
+p {
+  font-size: var(--paragraphs-font-size);
+  font-family: var(--font-type);
+}
+h1 {
+  font-size: var(--headings-font-size);
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-type);
+}
 html {
   font-size: 100%;
 }
@@ -37,6 +47,23 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 2rem;
+}
+
+.shoe-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-left: 40px;
 }
 
 /* block */
