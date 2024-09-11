@@ -74,7 +74,7 @@ nav {
 }
 /* modifier */
 .shoe-image--active {
-  border: 2px solid var(--main-color-orange);
+  border: 2px solid red;
 }
 .shoe__thumbnail {
   margin-top: 1rem;
