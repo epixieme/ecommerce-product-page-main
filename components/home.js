@@ -8,8 +8,11 @@ export function home() {
 
     ${shoeImageSelector()}
     <div class='text-container'>
+    <div class='text-width'>
+    <h4>SNEAKER COMPANY</h4>
     <h1>Fall Limited Edition Sneakers</h1>
-    <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac</p>
+    <p>These low-profile sneakers are your perfect casual wear companion.Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.</p>
+    </div>
     </div>
     </div>
   `;

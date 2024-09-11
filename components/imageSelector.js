@@ -28,12 +28,14 @@ const images = [
 export function imageSelector() {
   return `
   <div class='shoe-container'>
+  <div class="shoe-image-container">
         <img src="images/image-product-1.jpg" width="100%" height="auto" class='shoe-image'>
+        </div>
         <div class='shoe-thumbnails'>
         ${images
           .map(
             (image) =>
-              `<img src="${image.src}" width="80px" height="auto" class='shoe__thumbnail shoe--active' alt="${image.alt}">`
+              `<div class="thumbnail-container"><img src="${image.src}" width="100%" height="auto" class='shoe__thumbnail shoe--active' alt="${image.alt}"></div>`
           )
           .join("")}
         </div>
