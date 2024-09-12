@@ -19,7 +19,7 @@ const lookup = {
 export function router() {
   let path = window.location.hash;
 
-  const route = lookup[path] || unknown;
+  const route = lookup[path || "#home"] || unknown;
   const main = document.querySelector("main");
 
   if (main) {
@@ -32,3 +32,5 @@ export function router() {
     handleThumbnailClick();
   }
 }
+
+// create a function to remove the hash from the URL using hashchange event listener and replace state?
