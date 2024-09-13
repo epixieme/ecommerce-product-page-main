@@ -37,9 +37,9 @@ export async function fetchHomeData() {
     `;
   } catch (error) {
     console.error("Error fetching data:", error);
-    // const productTitleElement = document.getElementById("product-title");
-    // if (productTitleElement) {
-    //   productTitleElement.textContent = "Error loading product.";
-    // }
+    const productTitleElement = document.getElementById("product-title");
+    if (productTitleElement) {
+      productTitleElement.textContent = "Error loading product.";
+    }
   }
 }
