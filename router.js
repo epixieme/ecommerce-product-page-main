@@ -1,11 +1,12 @@
 import { about } from "./components/about.js";
-import { home } from "./components/home.js";
+import { home, fetchHomeData } from "./components/home.js";
 import { collections } from "./components/collections.js";
 import { contact } from "./components/contact.js";
 import { men } from "./components/men.js";
 import { women } from "./components/women.js";
 import { unknown } from "./components/unknown.js";
 import { handleThumbnailClick } from "./components/imageSelector.js";
+import { api } from "./api/api.js";
 
 const lookup = {
   "#home": home,
@@ -28,8 +29,13 @@ export function router() {
     console.error("Main element not found!");
   }
 
-  if (path === "#home") {
+  if (path === "#women") {
     handleThumbnailClick();
+  }
+
+  if (path === "#home") {
+    fetchHomeData();
+    // Fetch data for the home page after rendering
   }
 }
 

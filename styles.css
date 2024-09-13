@@ -116,3 +116,26 @@ nav {
   width: 65%;
   text-align: left;
 }
+.product-cards {
+  padding-top: 100px;
+  padding-inline: 10%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px; /* Space between items */
+  justify-content: center; /* Center items horizontally */
+  align-content: center; /* Center items vertically */
+}
+
+.product-card {
+  width: 100%;
+  border: 1px solid var(--neutral-color-grayish-blue);
+  border-radius: 10px;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+  padding-block: 20px;
+}
+.image-container {
+  width: 40%;
+}
