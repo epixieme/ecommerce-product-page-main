@@ -33,10 +33,8 @@ export function router() {
     handleThumbnailClick();
   }
 
-  if (path === "#home") {
-    fetchHomeData();
-    // Fetch data for the home page after rendering
-  }
+  fetchHomeData();
+  // Fetch data for the home page after rendering
 }
 
 // create a function to remove the hash from the URL using hashchange event listener and replace state?
