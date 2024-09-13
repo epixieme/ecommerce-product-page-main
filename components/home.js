@@ -26,7 +26,7 @@ export async function fetchHomeData() {
     ${data
       .map(
         (product) =>
-          `<div class="product-card">
+          `<div class="product-card animation">
         <div class="image-container">
         <img src=${product.image} width="100%" height="auto">
         </div>

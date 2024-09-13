@@ -53,6 +53,11 @@ nav {
   height: 100%;
 }
 
+a {
+  text-decoration: none;
+  color: var(--neutral-color-dark-grayish-blue);
+}
+
 .content-container {
   display: flex;
   flex-direction: row;
@@ -135,7 +140,22 @@ nav {
   align-items: center;
   flex-direction: column;
   padding-block: 20px;
+  animation: slide-down 1000ms;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
+
+@keyframes slide-down {
+  from {
+    transform: translateY(-10%);
+    opacity: 0.25;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
 .image-container {
   width: 40%;
+  height: 300px;
 }
