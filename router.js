@@ -1,9 +1,11 @@
 import { about } from "./components/about.js";
-import { home, fetchHomeData } from "./components/home.js";
+import { home } from "./components/home/home.js";
+import { fetchMensData } from "./components/mens/fetchMensData.js";
+import { fetchHomeData } from "./components/home/fetchHomeData.js";
 import { collections } from "./components/collections.js";
 import { contact } from "./components/contact.js";
-import { men } from "./components/men.js";
-import { women } from "./components/women.js";
+import { men } from "./components/mens/men.js";
+import { women } from "./components/womens/women.js";
 import { unknown } from "./components/unknown.js";
 import { handleThumbnailClick } from "./components/imageSelector.js";
 import { api } from "./api/api.js";
@@ -33,6 +35,7 @@ export function router() {
     handleThumbnailClick();
   }
 
+  fetchMensData();
   fetchHomeData();
   // Fetch data for the home page after rendering
 }
