@@ -89,7 +89,7 @@ a {
 }
 
 .shoe-image-container {
-  width: 100%;
+  width: 58%;
 }
 
 /* block */
@@ -185,5 +185,5 @@ a {
 
 .image-container {
   width: 100%;
-  height: 300px;
+  height: 400px;
 }
