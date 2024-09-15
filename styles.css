@@ -36,6 +36,9 @@ h1 {
 html {
   font-size: 100%;
 }
+.logo {
+  /* border: 1px solid red; */
+}
 
 header {
   display: flex;
@@ -52,6 +55,7 @@ nav {
   justify-content: space-between;
   border-bottom: 1px solid var(--neutral-color-grayish-blue);
   height: 100%;
+  /* border: 1px solid red; */
 }
 .nav__links {
   display: flex;
@@ -59,6 +63,19 @@ nav {
   gap: 4rem;
   justify-content: flex-start;
   align-items: center;
+  font-family: var(--font-type);
+  /* border: 1px solid red; */
+  height: 100%;
+}
+
+.nav_link {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav_link:hover {
+  border-bottom: 2px solid var(--main-color-orange);
 }
 a {
   text-decoration: none;
