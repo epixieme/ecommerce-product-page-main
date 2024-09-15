@@ -19,11 +19,39 @@ const lookup = {
   "#men": men,
 };
 
+function activeLink() {
+  // Select all elements that should be considered navigation links
+  const navLinks = document.querySelectorAll(".nav_link");
+
+  // Remove 'active' class from all navigation links
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+  });
+
+  // Get the current path from the URL hash
+  let hash = window.location.hash;
+  let path = hash.slice(1); // Extract the path after '#'
+
+  // Find the navigation link that matches the current path
+  const navLink = document.querySelector(`#link_${path}`);
+
+  // Add 'active' class to the matching navigation link if it exists
+  if (navLink) {
+    navLink.classList.add("active");
+  }
+}
+
+// Call the function on page load or whenever the hash changes
+// window.addEventListener("load", activeLink);
+// window.addEventListener("hashchange", activeLink);
+
 export function router() {
   let path = window.location.hash;
 
   const route = lookup[path || "#home"] || unknown;
   const main = document.querySelector("main");
+
+  activeLink();
 
   if (main) {
     main.innerHTML = route(); // Call the route function and set it as main.innerHTML
