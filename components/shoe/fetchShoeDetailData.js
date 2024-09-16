@@ -1,29 +1,22 @@
 import { api } from "../../api/api.js";
 
-export async function fetchHomeData() {
+export async function fetchShoeDetailData(id) {
   try {
-    // Call the API (assuming `api` is asynchronous)
-    const data = await api(
-      "https://dummyjson.com/products/category/mens-shoes"
-    );
+    console.log(id);
 
+    const data = await api(`https://dummyjson.com/products/${id}`);
+    console.log(data);
     // Access the first product (you may adjust this based on your API response)
-
     // Update the DOM with the fetched product title
-    const productCard = document.querySelector(".product-cards");
+    const productCard = document.querySelector(".men-product-card");
     productCard.innerHTML = `
-    ${data?.products
-      ?.map(
-        (product) =>
-          `<div class="product-card animation">
+        
         <div class="image-container">
-        <img src=${product.thumbnail} width="100%" height="auto">
+        <img src="" width="100%" height="auto">
         </div>
-        <p class="product-title">${product.title}</p>
-        </div>`
-      )
-      .join("")}
-    `;
+        <p class="product-title">twat</p>
+      
+ `;
   } catch (error) {
     console.error("Error fetching data:", error);
     // const productTitleElement = document.getElementById("product-title");

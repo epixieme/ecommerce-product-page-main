@@ -2,22 +2,15 @@ import { about } from "./components/about.js";
 import { home } from "./components/home/home.js";
 import { fetchMensData } from "./components/mens/fetchMensData.js";
 import { fetchHomeData } from "./components/home/fetchHomeData.js";
+import { fetchShoeDetailData } from "./components/shoe/fetchShoeDetailData.js";
 import { collections } from "./components/collections.js";
 import { contact } from "./components/contact.js";
 import { men } from "./components/mens/men.js";
 import { women } from "./components/womens/women.js";
 import { unknown } from "./components/unknown.js";
 import { handleThumbnailClick } from "./components/imageSelector.js";
-import { api } from "./api/api.js";
-
-const lookup = {
-  "#home": home,
-  "#about": about,
-  "#collections": collections,
-  "#women": women,
-  "#contact": contact,
-  "#men": men,
-};
+import { shoeDetail } from "./components/shoe/shoeDetail.js";
+// import { api } from "./api/api.js";
 
 function activeLink() {
   // Select all elements that should be considered navigation links
@@ -46,7 +39,22 @@ function activeLink() {
 // window.addEventListener("hashchange", activeLink);
 
 export function router() {
-  let path = window.location.hash;
+  const path = window.location.hash;
+  let dynamicPath = path.split("_");
+  const productIds = document.querySelectorAll(".product-card-link");
+  console.log(productIds, "productIds");
+
+  let ids = [...productIds].map((element) => element.getAttribute("data-id"));
+
+  const lookup = {
+    "#home": home,
+    "#about": about,
+    "#collections": collections,
+    "#women": women,
+    "#contact": contact,
+    "#men": men,
+    [`#sneaker_${dynamicPath[1]}`]: shoeDetail, // Add route for single sneaker
+  };
 
   const route = lookup[path || "#home"] || unknown;
   const main = document.querySelector("main");
@@ -63,8 +71,12 @@ export function router() {
     handleThumbnailClick();
   }
 
+  // Initialize an empty array to hold the attribute values
+  const prodId = ids.filter((element) => element == dynamicPath[1])[0];
+  console.log(prodId, "id");
   fetchMensData();
   fetchHomeData();
+  fetchShoeDetailData(prodId);
   // Fetch data for the home page after rendering
 }
 

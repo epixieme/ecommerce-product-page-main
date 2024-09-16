@@ -6,7 +6,7 @@ export async function fetchMensData() {
     const data = await api(
       "https://dummyjson.com/products/category/mens-shoes"
     );
-    console.log(data, "data");
+
     // Access the first product (you may adjust this based on your API response)
 
     // Update the DOM with the fetched product title
@@ -15,15 +15,20 @@ export async function fetchMensData() {
     ${data?.products
       ?.map(
         (product) =>
-          `<div class="men-product-card animation">
+          `
+        <a href="#sneaker_${product.id}" class="product-card-link" data-id=${product.id}>
+        <div class="men-product-card animation">
         <div class="image-container">
         <img src=${product.thumbnail} width="100%" height="auto">
         </div>
         <p class="product-title">${product.title}</p>
-        </div>`
+        </div>
+        </a>
+        `
       )
       .join("")}
     `;
+    // Select all product card links
   } catch (error) {
     console.error("Error fetching data:", error);
     const productTitleElement = document.getElementById("product-title");

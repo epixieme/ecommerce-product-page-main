@@ -1,6 +1,5 @@
 import { router } from "./router.js";
 
-console.log("app.js");
 // Initialize the router when the page loads
 window.addEventListener("DOMContentLoaded", () => {
   router();

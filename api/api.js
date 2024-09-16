@@ -1,5 +1,4 @@
 export async function api(url) {
-  console.log(url);
   try {
     // Fetch data from your API (adjust URL as necessary)
     const response = await fetch(url);
