@@ -39,8 +39,30 @@ const server = http.createServer((req, res) => {
       res.setHeader("Content-Type", "text/plain");
       res.end("File not found");
     } else {
+      // Set common headers
       res.statusCode = 200;
       res.setHeader("Content-Type", getContentType(filePath));
+
+      // Set Cache-Control headers based on file type
+      const ext = path.extname(filePath).toLowerCase();
+      if (ext === ".html" || ext === ".js" || ext === ".css") {
+        // For dynamic content, disable caching
+        res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+      } else if (
+        ext === ".jpg" ||
+        ext === ".png" ||
+        ext === ".gif" ||
+        ext === ".jpeg" ||
+        ext === ".svg"
+      ) {
+        // For static assets, enable long caching (e.g., 1 year)
+        res.setHeader("Cache-Control", "max-age=31536000, public");
+      } else {
+        // Default for other files
+        res.setHeader("Cache-Control", "no-cache");
+      }
+
+      // Send the response
       res.end(data);
     }
   });

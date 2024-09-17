@@ -1,5 +1,6 @@
 import { api } from "../../api/api.js";
 import { imageSelector, handleThumbnailClick } from "../imageSelector.js";
+
 export async function fetchShoeDetailData(id) {
   try {
     const data = await api(`https://dummyjson.com/products/${id}`);
@@ -16,7 +17,8 @@ export async function fetchShoeDetailData(id) {
     <div class='text-position'>
     <h4>${shoes.brand && shoes.brand}</h4>
     <h1>${shoes.title}</h1>
-    <p>${shoes.description}.</p>
+    <p>${shoes.description}</p>
+    <h2>£${shoes.price}</h2>
     </div>
  `;
     handleThumbnailClick(shoes);
