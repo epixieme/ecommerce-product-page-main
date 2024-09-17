@@ -24,7 +24,6 @@ export function imageSelector(data) {
 
 export function handleThumbnailClick(data) {
   const thumbnails = document.querySelectorAll(".shoe__thumbnail");
-
   data &&
     thumbnails.forEach((thumbnail, i) => {
       thumbnail.addEventListener("click", () => {
@@ -37,6 +36,7 @@ export function handleThumbnailClick(data) {
         if (activeThumbnail) {
           activeThumbnail.classList.remove("shoe-image--active");
         }
+        // Add the active class to the clicked thumbnail
 
         thumbnail.classList.add("shoe-image--active");
       });
