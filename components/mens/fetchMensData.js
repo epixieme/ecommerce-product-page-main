@@ -12,8 +12,8 @@ export async function fetchMensData() {
     // Update the DOM with the fetched product title
     const productCard = document.querySelector(".men-product-cards");
     productCard.innerHTML = `
-    ${data?.products
-      ?.map(
+    ${data.products
+      .map(
         (product) =>
           `
         <a href="#sneaker_${product.id}" class="product-card-link" data-id=${product.id}>

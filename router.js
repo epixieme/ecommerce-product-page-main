@@ -35,14 +35,13 @@ function activeLink() {
 }
 
 // Call the function on page load or whenever the hash changes
-// window.addEventListener("load", activeLink);
-// window.addEventListener("hashchange", activeLink);
+window.addEventListener("load", activeLink);
+window.addEventListener("hashchange", activeLink);
 
 export function router() {
   const path = window.location.hash;
   let dynamicPath = path.split("_");
   const productIds = document.querySelectorAll(".product-card-link");
-  console.log(productIds, "productIds");
 
   let ids = [...productIds].map((element) => element.getAttribute("data-id"));
 
@@ -67,16 +66,28 @@ export function router() {
     console.error("Main element not found!");
   }
 
-  if (path === "#women") {
-    handleThumbnailClick();
+  // Fetch data for the current route
+  if (path.startsWith("#sneaker_")) {
+    const prodId = ids.filter((element) => element == dynamicPath[1])[0];
+    fetchShoeDetailData(prodId).then(() => {
+      handleThumbnailClick(); // Ensure this is called after the data is fetched and rendered
+    });
+  } else {
+    fetchMensData();
+    fetchHomeData();
   }
 
-  // Initialize an empty array to hold the attribute values
-  const prodId = ids.filter((element) => element == dynamicPath[1])[0];
-  console.log(prodId, "id");
-  fetchMensData();
-  fetchHomeData();
-  fetchShoeDetailData(prodId);
+  // if (path === `#sneaker_${dynamicPath[1]}`) {
+  //   handleThumbnailClick();
+  // }
+
+  // const prodId = ids.filter((element) => element == dynamicPath[1])[0];
+
+  // fetchMensData(); // Call it after the DOM is updated
+
+  // fetchHomeData();
+  // fetchShoeDetailData(prodId);
+
   // Fetch data for the home page after rendering
 }
 

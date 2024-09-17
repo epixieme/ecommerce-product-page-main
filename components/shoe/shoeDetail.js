@@ -1,17 +1,17 @@
-import { fetchShoeDetailData } from "./fetchShoeDetailData.js";
+import { imageSelector } from "../imageSelector.js";
 
 export function shoeDetail() {
-  // Example function to fetch sneaker data
-  // Fetch sneaker data based on ID
-
   return `
-    <a href="#sneaker" class="product-card-link">
-        <div class="men-product-card animation">
-        <div class="image-container">
-        <img src="" width="100%" height="auto">
-        </div>
-        <p class="product-title">hello</p>
-        </div>
-        </a>
+  <div class='content-container'>
+
+    ${imageSelector()}
+    <div class='text-container'>
+    <div class='text-position'>
+    <h4>SNEAKER COMPANY</h4>
+    <h1>Fall Limited Edition Sneakers</h1>
+    <p>These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.</p>
+    </div>
+    </div>
+    </div>
   `;
 }
