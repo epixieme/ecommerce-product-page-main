@@ -50,7 +50,12 @@ nav {
 }
 
 .nav__links {
-  display: hidden;
+  display: none;
+}
+
+.logo {
+  position: relative;
+  left: -20px;
 }
 
 .product-cards {
