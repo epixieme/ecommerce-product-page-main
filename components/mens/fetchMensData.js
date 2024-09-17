@@ -17,9 +17,12 @@ export async function fetchMensData() {
         <a href="#sneaker_${product.id}" class="product-card-link" data-id=${product.id}>
         <div class="product-card animation">
         <div class="image-container">
-        <img src=${product.thumbnail} width="100%" height="auto">
+        <img src=${product.images[0]} width="100%" height="auto">
         </div>
+          <div class="product-text-container">
         <p class="product-title">${product.title}</p>
+        <caption class="product-price">£${product.price}</caption>
+        </div>
         </div>
         </a>
         `

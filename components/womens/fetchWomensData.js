@@ -19,7 +19,10 @@ export async function fetchWomensData() {
         <div class="image-container">
         <img src=${product.thumbnail} width="100%" height="auto">
         </div>
+        <div class="product-text-container">
         <p class="product-title">${product.title}</p>
+        <caption class="product-price">£${product.price}</caption>
+        </div>
         </div>
         </a>
         `
