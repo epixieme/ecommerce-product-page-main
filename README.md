@@ -1,3 +1,5 @@
+<h1>Urban Edge</h1>
+
 This project is an ecommerce website based on one of the challenges from Front-End Mentor. 
 
 I added my own take and created this project with the idea of using javascript to demonstrate a single page application without using a framework.
