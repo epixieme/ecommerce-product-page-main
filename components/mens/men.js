@@ -1,8 +1,8 @@
 export function men() {
   return `
         <a href="#sneaker" class="product-card-link" data-id=" ">  
-<div class="men-product-cards">
-    <div class="men-product-card">
+<div class="product-cards">
+    <div class="product-card">
         <div class="image-container">
         <img src="" width="100%" height="auto">
         </div>

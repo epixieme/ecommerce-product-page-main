@@ -1,6 +1,7 @@
 :root {
   /* ### Primary Colors */
   --main-color-orange: hsl(26, 100%, 55%);
+  --main-color-dark-teal: hsl(190, 90%, 16%);
   --main-color-pale-orange: hsl(25, 100%, 94%);
   /* ### Neutral Colors */
   --neutral-color-very-dark-blue: hsl(220, 13%, 13%);
@@ -107,7 +108,8 @@ a {
 
 .shoe-image-container {
   width: 60%;
-  border: 2px solid var(--main-color-orange);
+  border: 2px solid var(--main-color-dark-teal);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
 
@@ -118,6 +120,7 @@ a {
 /* modifier */
 .shoe-image--active {
   border: 2px solid var(--main-color-orange);
+  opacity: 0.5;
 }
 
 .shoe__thumbnail {

@@ -1,13 +1,9 @@
 import { api } from "../../api/api.js";
 
-export async function fetchHomeData() {
+export async function fetchWomensData() {
   try {
     // Call the API (assuming `api` is asynchronous)
     const data = await api(
-      "https://dummyjson.com/products/category/mens-shoes"
-    );
-
-    const data2 = await api(
       "https://dummyjson.com/products/category/womens-shoes"
     );
 
@@ -29,21 +25,6 @@ export async function fetchHomeData() {
         `
       )
       .join("")}
-       ${data2.products
-         .map(
-           (product) =>
-             `
-        <a href="#sneaker_${product.id}" class="product-card-link" data-id=${product.id}>
-        <div class="product-card animation">
-        <div class="image-container">
-        <img src=${product.thumbnail} width="100%" height="auto">
-        </div>
-        <p class="product-title">${product.title}</p>
-        </div>
-        </a>
-        `
-         )
-         .join("")}
     `;
     // Select all product card links
   } catch (error) {

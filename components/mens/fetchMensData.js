@@ -8,14 +8,14 @@ export async function fetchMensData() {
     );
 
     // Update the DOM with the fetched product title
-    const productCard = document.querySelector(".men-product-cards");
+    const productCard = document.querySelector(".product-cards");
     productCard.innerHTML = `
     ${data.products
       .map(
         (product) =>
           `
         <a href="#sneaker_${product.id}" class="product-card-link" data-id=${product.id}>
-        <div class="men-product-card animation">
+        <div class="product-card animation">
         <div class="image-container">
         <img src=${product.thumbnail} width="100%" height="auto">
         </div>

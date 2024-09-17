@@ -10,6 +10,7 @@ import { women } from "./components/womens/women.js";
 import { unknown } from "./components/unknown.js";
 import { handleThumbnailClick } from "./components/imageSelector.js";
 import { shoeDetail } from "./components/shoe/shoeDetail.js";
+import { fetchWomensData } from "./components/womens/fetchWomensData.js";
 // import { api } from "./api/api.js";
 
 function activeLink() {
@@ -72,8 +73,11 @@ export function router() {
     fetchShoeDetailData(prodId).then(() => {
       handleThumbnailClick(); // Ensure this is called after the data is fetched and rendered
     });
-  } else {
+  } else if (path === "#men") {
     fetchMensData();
+  } else if (path === "#women") {
+    fetchWomensData();
+  } else {
     fetchHomeData();
   }
 
