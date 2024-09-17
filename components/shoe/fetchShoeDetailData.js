@@ -4,17 +4,22 @@ export async function fetchShoeDetailData(id) {
   try {
     const data = await api(`https://dummyjson.com/products/${id}`);
     const productCard = document.querySelector(".content-container");
-    productCard.innerHTML = `
+    if (data) {
+      sessionStorage.setItem("shoeData", JSON.stringify(data));
+    }
 
-    ${imageSelector(data)}
+    const shoes = JSON.parse(sessionStorage.getItem("shoeData"));
+    console.log(shoes);
+    productCard.innerHTML = `
+    ${imageSelector(shoes)}
     <div class='text-container'>
     <div class='text-position'>
-    <h4>${data.brand && data.brand}</h4>
-    <h1>${data.title}</h1>
-    <p>${data.description}.</p>
+    <h4>${shoes.brand && shoes.brand}</h4>
+    <h1>${shoes.title}</h1>
+    <p>${shoes.description}.</p>
     </div>
  `;
-    handleThumbnailClick(data);
+    handleThumbnailClick(shoes);
   } catch (error) {
     console.error("Error fetching data:", error);
     // const productTitleElement = document.getElementById("product-title");

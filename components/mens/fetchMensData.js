@@ -7,8 +7,6 @@ export async function fetchMensData() {
       "https://dummyjson.com/products/category/mens-shoes"
     );
 
-    // Access the first product (you may adjust this based on your API response)
-
     // Update the DOM with the fetched product title
     const productCard = document.querySelector(".men-product-cards");
     productCard.innerHTML = `
