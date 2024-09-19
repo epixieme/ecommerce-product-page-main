@@ -1,16 +1,16 @@
-import { about } from "./components/about.js";
-import { home } from "./components/home/home.js";
-import { fetchMensData } from "./components/mens/fetchMensData.js";
-import { fetchHomeData } from "./components/home/fetchHomeData.js";
-import { fetchShoeDetailData } from "./components/shoe/fetchShoeDetailData.js";
-import { collections } from "./components/collections.js";
-import { contact } from "./components/contact.js";
-import { men } from "./components/mens/men.js";
-import { women } from "./components/womens/women.js";
-import { unknown } from "./components/unknown.js";
-import { handleThumbnailClick } from "./components/imageSelector.js";
-import { shoeDetail } from "./components/shoe/shoeDetail.js";
-import { fetchWomensData } from "./components/womens/fetchWomensData.js";
+import { about } from "./src/client/components/about.js";
+import { home } from "./src/client/components/home/home.js";
+import { fetchMensData } from "./src/client/components/mens/fetchMensData.js";
+import { fetchHomeData } from "./src/client/components/home/fetchHomeData.js";
+import { fetchShoeDetailData } from "./src/client/components/shoe/fetchShoeDetailData.js";
+import { collections } from "./src/client/components/collections.js";
+import { contact } from "./src/client/components/contact.js";
+import { men } from "./src/client/components/mens/men.js";
+import { women } from "./src/client/components/womens/women.js";
+import { unknown } from "./src/client/components/unknown.js";
+import { handleThumbnailClick } from "./src/client/components/imageSelector.js";
+import { shoeDetail } from "./src/client/components/shoe/shoeDetail.js";
+import { fetchWomensData } from "./src/client/components/womens/fetchWomensData.js";
 // import { api } from "./api/api.js";
 
 function activeLink() {
