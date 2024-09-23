@@ -89,6 +89,7 @@ nav {
   width: 50%;
   height: 100%;
 }
+
 @media (min-width: 481px) {
   .product-cards {
     padding-top: 200px;
@@ -126,8 +127,6 @@ nav {
     justify-content: space-between;
     border-bottom: 1px solid var(--neutral-color-grayish-blue);
     height: 100%;
-
-    /* border: 1px solid red; */
   }
   .nav__links {
     display: flex;
@@ -155,7 +154,6 @@ nav {
     align-items: center;
     justify-content: space-evenly;
     gap: 2rem;
-    /* border: 1px solid red; */
     height: 80vh;
   }
 
@@ -168,14 +166,12 @@ nav {
     margin-top: 2rem;
     width: 50%;
     height: 100%;
-
     padding-left: 90px;
   }
 
   .shoe-image-container {
     width: 60%;
     border: 1px solid var(--neutral-color-grayish-blue);
-    /* border: 2px solid var(--main-color-dark-teal); */
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     background-color: var(--neutral-color-light-grayish-blue);
